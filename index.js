@@ -1,14 +1,13 @@
-//console.log("You have your backpack in hand \nWhat is your choice?");
 // npm install prompt-sync - kom ihåg att denna var tvungen att installeras för att följande stycke skulle fungera.
 
-/* const prompt = require("prompt-sync")();
+//console.log("You have your backpack in hand \nWhat is your choice?");
+const prompt = require("prompt-sync")();
 
-let count = 0;
-while (true) {
-  console.log("press a letter ");
-  const choice = prompt();
-  count++;
+let price = "banana";
+let message = isNaN(price)
+  ? "write a number"
+  : price >= 18
+  ? "much money"
+  : "little money";
 
-  console.log(`you have pressed a letter, ${count} times`);
-}
- */
+console.log(message);
