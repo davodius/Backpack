@@ -1,28 +1,42 @@
-// npm install prompt-sync - kom ihåg att denna var tvungen att installeras för att följande stycke skulle fungera.
-
+// npm install prompt-sync - kom ihåg
+// const/ let variabelNamn = prompt()
+// för läsning i terminalen.
+// + const prompt = require("prompt-sync")();
+// början av prog. hämta funktionen
 const prompt = require("prompt-sync")();
 
-// const thingPutInBag = prompt();
+// Creating backpack array
+let stuffInBag = ["banana", "ananas", "mango", "lime"];
 
-/* // Creating backpack
-class Backpack {
-  constructor() {
-    this.thingPutInBag = [];
-  }
- */
-let choice = prompt();
+console.log(
+  "select the number of what you want to do with your backpack \n [1] -> put something in the bag \n [2] -> remove something from the bag \n [3] -> see whats in the bag "
+);
+
+const choice = prompt();
 
 switch (choice) {
   case "1":
-    console.log("1 was chosen");
+    console.log("what are you adding? ");
+    let thingPutInBag = prompt();
+
+    stuffInBag.push(thingPutInBag);
+    console.log(`added ${thingPutInBag} to the backpack.`);
+    console.log(`the bag contains the following ${stuffInBag}`);
+
     break;
 
   case "2":
-    console.log("2 was chosen");
+    console.log("select the id of what you wish to remove: ");
+
+    let removeItemFromBag = prompt();
+
     break;
 
   case "3":
-    console.log("3 was chosen");
+    console.log("this is what is what we have: ");
+    stuffInBag.sort();
+    console.log(stuffInBag);
+
     break;
 
   default:
