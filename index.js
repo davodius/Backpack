@@ -10,7 +10,7 @@ let stuffInBag = ["BBBB", "AAAA", "DDDD", "CCCC"];
 stuffInBag.sort();
 
 console.log(
-  "select the number of what you want to do with your backpack \n [1] -> put something in the bag \n [2] -> remove something from the bag \n [3] -> see whats in the bag "
+  "select the number of what you want to do with your backpack \n[1] -> put something in the bag \n[2] -> remove something from the bag \n[3] -> see whats in the bag \n[4] -> close the bag \n "
 );
 
 const choice = prompt();
@@ -22,41 +22,67 @@ switch (choice) {
 
     stuffInBag.push(thingPutInBag);
     console.log(`added ${thingPutInBag} to the backpack.`);
-    console.log(`the bag contains the following ${stuffInBag}`);
+    console.log(`the bag now contains the following: ${stuffInBag}`);
+    console.log("----------------");
 
     break;
 
   case "2":
-    console.log("select the id of what you wish to remove: ");
-    stuffInBag.forEach((element, index) => {
-      console.log(`${index + 1}: ${element}`);
-    });
-    let removeItemFromBag = prompt();
+    while (true) {
+      console.log("select the id of what you wish to remove: ");
+      stuffInBag.forEach((element, index) => {
+        console.log(`${index + 1}: ${element}`);
+        console.log("----------------");
+      });
+      let removeItemFromBag = prompt();
 
-    // Convert user input to zero-based index
-    let removeIndex = removeItemFromBag - 1;
+      if (removeItemFromBag >= 1) {
+        let removeIndex = removeItemFromBag - 1;
 
-    if (removeIndex >= 0 && removeIndex < stuffInBag.length) {
-      stuffInBag.splice(removeIndex, 1);
+        if (removeIndex >= 0 && removeIndex < stuffInBag.length) {
+          stuffInBag.splice(removeIndex, 1);
+        }
+
+        stuffInBag.forEach((element, index) => {
+          console.log(`${index + 1}: ${element}`);
+          console.log("----------------");
+        });
+      } else {
+        console.log(
+          "you need to press an index number that is more or equal to 1 "
+        );
+      }
+
+      console.log(
+        "write [y] to go back to the menu and [n] to close the backpack "
+      );
+
+      let menuReturnChoice = prompt();
+
+      menuReturnChoice == "n"
+        ? (console.log("You've closed the backpack."), process.exit())
+        : console.log("================");
+
+      break;
     }
-
-    stuffInBag.forEach((element, index) => {
-      console.log(`${index + 1}: ${element}`);
-    });
-
-    break;
-
   case "3":
     console.log("the bag has: ");
     stuffInBag.sort();
     stuffInBag.forEach((element, index) => {
       console.log(`${index}: ${element}`);
+      console.log("----------------");
     });
 
     break;
 
+  case "4":
+    console.log("you've closed the backpack ");
+    process.exit();
+    break;
+
   default:
-    console.log("you need to pick 1-3 ");
+    console.log("you need to pick 1-4 ");
+
     break;
 }
 
