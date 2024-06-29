@@ -33,14 +33,17 @@ switch (choice) {
     break;
 
   case "3":
-    console.log("this is what is what we have: ");
+    console.log("the bag has: ");
     stuffInBag.sort();
-    console.log(stuffInBag);
+    stuffInBag.forEach((element, index) => {
+      console.log(`${index + 1}: ${element}`);
+    });
+    //console.log(`${stuffInBag},`stuffInBag.indexOf.(${stuffInBag}));
 
     break;
 
   default:
-    console.log("you need to pick 1-3");
+    console.log("you need to pick 1-3 ");
     break;
 }
 
