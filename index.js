@@ -2,12 +2,35 @@
 
 const prompt = require("prompt-sync")();
 
+// const thingPutInBag = prompt();
+
+/* // Creating backpack
 class Backpack {
   constructor() {
     this.thingPutInBag = [];
   }
+ */
+let choice = prompt();
 
-  addThingPutInBag(thingPutInBag) {
+switch (choice) {
+  case "1":
+    console.log("1 was chosen");
+    break;
+
+  case "2":
+    console.log("2 was chosen");
+    break;
+
+  case "3":
+    console.log("3 was chosen");
+    break;
+
+  default:
+    console.log("you need to pick 1-3");
+    break;
+}
+
+/* addThingPutInBag(thingPutInBag) {
     this.thingPutInBag.push(thingPutInBag);
     console.log(`${thingPutInBag} added that to the backpack.`);
   }
@@ -44,3 +67,4 @@ class Backpack {
     return hasThingPutInBag;
   }
 }
+ */
