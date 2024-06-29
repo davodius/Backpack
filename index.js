@@ -6,7 +6,8 @@
 const prompt = require("prompt-sync")();
 
 // Creating backpack array
-let stuffInBag = ["banana", "ananas", "mango", "lime"];
+let stuffInBag = ["BBBB", "AAAA", "DDDD", "CCCC"];
+stuffInBag.sort();
 
 console.log(
   "select the number of what you want to do with your backpack \n [1] -> put something in the bag \n [2] -> remove something from the bag \n [3] -> see whats in the bag "
@@ -27,16 +28,14 @@ switch (choice) {
 
   case "2":
     console.log("select the id of what you wish to remove: ");
-    //stuffInBag.sort();
     stuffInBag.forEach((element, index) => {
-      console.log(`${index + 0}: ${element}`);
+      console.log(`${index}: ${element}`);
     });
     let removeItemFromBag = prompt();
 
     stuffInBag.splice(removeItemFromBag, 1);
-    //stuffInBag.sort();
     stuffInBag.forEach((element, index) => {
-      console.log(`${index + 1}: ${element}`);
+      console.log(`${index}: ${element}`);
     });
 
     break;
@@ -45,7 +44,7 @@ switch (choice) {
     console.log("the bag has: ");
     stuffInBag.sort();
     stuffInBag.forEach((element, index) => {
-      console.log(`${index + 1}: ${element}`);
+      console.log(`${index}: ${element}`);
     });
     //console.log(`${stuffInBag},`stuffInBag.indexOf.(${stuffInBag}));
 
