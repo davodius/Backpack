@@ -29,13 +29,19 @@ switch (choice) {
   case "2":
     console.log("select the id of what you wish to remove: ");
     stuffInBag.forEach((element, index) => {
-      console.log(`${index}: ${element}`);
+      console.log(`${index + 1}: ${element}`);
     });
     let removeItemFromBag = prompt();
 
-    stuffInBag.splice(removeItemFromBag, 1);
+    // Convert user input to zero-based index
+    let removeIndex = removeItemFromBag - 1;
+
+    if (removeIndex >= 0 && removeIndex < stuffInBag.length) {
+      stuffInBag.splice(removeIndex, 1);
+    }
+
     stuffInBag.forEach((element, index) => {
-      console.log(`${index}: ${element}`);
+      console.log(`${index + 1}: ${element}`);
     });
 
     break;
@@ -46,7 +52,6 @@ switch (choice) {
     stuffInBag.forEach((element, index) => {
       console.log(`${index}: ${element}`);
     });
-    //console.log(`${stuffInBag},`stuffInBag.indexOf.(${stuffInBag}));
 
     break;
 
@@ -92,4 +97,15 @@ switch (choice) {
     return hasThingPutInBag;
   }
 }
+ */
+/* console.log("select the id of what you wish to remove: ");
+    stuffInBag.forEach((element, index) => {
+      console.log(`${index}: ${element}`);
+    });
+    let removeItemFromBag = prompt();
+
+    stuffInBag.splice(removeItemFromBag, 1);
+    stuffInBag.forEach((element, index) => {
+      console.log(`${index}: ${element}`);
+    });
  */
