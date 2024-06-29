@@ -27,8 +27,17 @@ switch (choice) {
 
   case "2":
     console.log("select the id of what you wish to remove: ");
-
+    stuffInBag.sort();
+    stuffInBag.forEach((element, index) => {
+      console.log(`${index + 1}: ${element}`);
+    });
     let removeItemFromBag = prompt();
+
+    stuffInBag.splice(removeItemFromBag, 1);
+    stuffInBag.sort();
+    stuffInBag.forEach((element, index) => {
+      console.log(`${index + 1}: ${element}`);
+    });
 
     break;
 
