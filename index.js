@@ -85,18 +85,21 @@ switch (choice) {
     break;
 
   default:
-    let choiceDefault = isNaN(choice)
-      ? console.log(
-          `it has to be a number\n${choice} is not one\npress enter to try again `
-        )
-      : choice >= 5 || choice <= 0
-      ? console.log(
-          "this menu only uses numbers less than 5 in the 1 -> 4 range, press [enter] to retry "
-        )
-      : console.log(
-          "this menu only uses positive numbers in the 1 -> 4 range, press [enter] to retry  "
-        );
-    console.log("||||||||||||||||");
+    if (isNaN(choice)) {
+      console.log(
+        `It has to be a number\n${choice} is not one\nPress [enter] to try again`
+      );
+    } else if (choice >= 5 || choice <= 0) {
+      console.log(
+        "This menu only uses numbers less than 5 in the 1 -> 4 range, press [enter] to retry"
+      );
+    } else {
+      console.log(
+        "This menu only uses positive numbers in the 1 -> 4 range, press [enter] to retry"
+      );
+    }
+
+    console.log("================");
 
     break;
 }
