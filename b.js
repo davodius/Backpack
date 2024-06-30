@@ -11,30 +11,31 @@ while (true) {
     console.log(`${index + 1}: ${element}`);
     console.log("----------------");
   });
-  while (true) {
-    let removeItemFromBag = prompt();
+  let removeItemFromBag = prompt();
 
-    let highestIndex = stuffInBag.length - 1;
-    if (removeItemFromBag >= 1) {
-      // Convert user input to zero-based index
-      let removeIndex = removeItemFromBag - 1;
+  let highestIndex = stuffInBag.length - 1;
+  if (removeItemFromBag >= 1) {
+    // Convert user input to zero-based index
+    let removeIndex = removeItemFromBag - 1;
 
-      if (removeIndex >= 0 && removeIndex < stuffInBag.length) {
-        stuffInBag.splice(removeIndex, 1);
-      }
-
-      stuffInBag.forEach((element, index) => {
-        console.log(`${index + 1}: ${element}`);
-      });
+    if (removeIndex >= 0 && removeIndex < stuffInBag.length) {
+      stuffInBag.splice(removeIndex, 1);
     }
-    if (removeItemFromBag > stuffInBag.length - 1) {
-      console.log("that id does not exist ");
-      //console.log(highestIndexValue); // Output: 50
-    } else {
-      console.log("it needs to be a number ");
-    }
+
+    stuffInBag.forEach((element, index) => {
+      console.log(`${index + 1}: ${element}`);
+    });
   }
-  console.log("write [m] to go to the menu and [c] to close the backpack ");
+  if (removeItemFromBag > stuffInBag.length - 1) {
+    console.log("that id does not exist ");
+    //console.log(highestIndexValue);
+  } else if (isNaN(removeItemFromBag)) {
+    console.log("it needs to be a number ");
+  }
+
+  console.log(
+    "press any key and/ or enter to proceed to the menu and [c] for closing the backpack "
+  );
 
   let menuReturnChoice = prompt();
 
