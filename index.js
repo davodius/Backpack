@@ -26,7 +26,7 @@ switch (choice) {
     console.log("----------------");
 
     // kom ihåg att fixa: bara bokstäver skall tas emot/ inga siffror
-    //+ kunna lägga till hur många man vill
+    //+ kunna lägga till hur många man vill (loopa, tror while true blir bra).
 
     break;
 
@@ -84,13 +84,32 @@ switch (choice) {
     process.exit();
     break;
 
-  // kom ihåg att göra en för bokstäver från input här som case 5 (isNaN(choice)) typ
-
   default:
-    console.log("you need to pick a number in the 1 -> 4 range ");
+    let choiceDefault = isNaN(choice)
+      ? console.log(
+          `it has to be a number\n${choice} is not one\npress enter to try again `
+        )
+      : choice >= 5 || choice <= 0
+      ? console.log(
+          "this menu only uses numbers less than 5 in the 1 -> 4 range, press [enter] to retry "
+        )
+      : console.log(
+          "this menu only uses positive numbers in the 1 -> 4 range, press [enter] to retry  "
+        );
+    console.log("||||||||||||||||");
 
     break;
 }
+
+// kom ihåg att göra en för bokstäver från input här som case 5 (isNaN(choice)) typ
+/* case isNaN(choice):
+    console.log(`it has to be a number, ${choice} is not one, try again`);
+    break;
+
+  case choice > 4 || choice === 0:
+    console.log("you need to pick a number in the 1 -> 4 range ");
+
+    break; */
 
 /* addThingPutInBag(thingPutInBag) {
     this.thingPutInBag.push(thingPutInBag);
