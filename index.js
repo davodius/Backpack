@@ -78,15 +78,26 @@ switch (choice) {
 
         let menuReturnChoice = prompt();
 
-        menuReturnChoice == "m"
-          ? "================"
+        if (menuReturnChoice === "m") {
+          console.log("================");
+          break;
+        } else {
+          menuReturnChoice === "c"
+            ? (console.log("You've closed the backpack."), process.exit())
+            : console.log("================");
+        }
+
+        /*  menuReturnChoice == "m"
+          ? console.log("================"); break;
           : menuReturnChoice == "c"
           ? (console.log("You've closed the backpack."), process.exit())
           : console.log("================");
+ */
       }
-
-      break;
     }
+
+    break;
+
   case "3":
     console.log("the bag has: ");
     stuffInBag.sort();
