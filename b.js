@@ -13,6 +13,8 @@ while (true) {
   });
   let removeItemFromBag = prompt();
 
+  let highestIndex = stuffInBag.length - 1;
+
   if (removeItemFromBag >= 1) {
     // Convert user input to zero-based index
     let removeIndex = removeItemFromBag - 1;
@@ -24,15 +26,13 @@ while (true) {
     stuffInBag.forEach((element, index) => {
       console.log(`${index + 1}: ${element}`);
     });
-  } else {
-    console.log(
-      "you need to press an index number that is more or equal to 1 "
-    );
+  }
+  if (removeItemFromBag > stuffInBag.length - 1) {
+    console.log("that id does not exist ");
+    //console.log(highestIndexValue); // Output: 50
   }
 
-  console.log(
-    "write [y] to go back to the menu and [n] to close the backpack "
-  );
+  console.log("write [m] to go to the menu and [c] to close the backpack ");
 
   let menuReturnChoice = prompt();
 
