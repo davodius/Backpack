@@ -41,24 +41,33 @@ while (true) {
 
   let menuReturnChoice = prompt();
 
-  menuReturnChoice == "c"
+  menuReturnChoice == "m"
+    ? "================"
+    : menuReturnChoice == "c"
     ? (console.log("You've closed the backpack."), process.exit())
     : console.log("================");
 }
-/* const prompt = require("prompt-sync")();
 
-// Creating backpack array
-let stuffInBag = ["BBBB", "AAAA", "DDDD", "CCCC"];
-stuffInBag.sort();
+// Gammla slut terneryn
+/* 
+menuReturnChoice == "c"
+    ? (console.log("You've closed the backpack."), process.exit())
+    : console.log("================");} 
+*/
 
-console.log("select the id of what you wish to remove: ");
-stuffInBag.forEach((element, index) => {
-  console.log(`${index}: ${element}`);
-});
-let removeItemFromBag = prompt();
+/* // const prompt = require("prompt-sync")();
 
-stuffInBag.splice(removeItemFromBag, 1);
-stuffInBag.forEach((element, index) => {
-  console.log(`${index}: ${element}`);
-});
- */
+// // Creating backpack array
+// let stuffInBag = ["BBBB", "AAAA", "DDDD", "CCCC"];
+// stuffInBag.sort();
+
+// console.log("select the id of what you wish to remove: ");
+// stuffInBag.forEach((element, index) => {
+//   console.log(`${index}: ${element}`);
+// });
+// let removeItemFromBag = prompt();
+
+// stuffInBag.splice(removeItemFromBag, 1);
+// stuffInBag.forEach((element, index) => {
+//   console.log(`${index}: ${element}`);
+// }); */

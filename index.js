@@ -25,10 +25,14 @@ switch (choice) {
     console.log(`the bag now contains the following: ${stuffInBag}`);
     console.log("----------------");
 
+    // kom ihåg att fixa: bara bokstäver skall tas emot/ inga siffror
+    //+ kunna lägga till hur många man vill
+
     break;
 
   case "2":
     while (true) {
+      // kom ihåg att fixa så man inte längre kommer fram om arrayn är tom.
       console.log("select the id of what you wish to remove: ");
       stuffInBag.forEach((element, index) => {
         console.log(`${index + 1}: ${element}`);
@@ -79,6 +83,8 @@ switch (choice) {
     console.log("you've closed the backpack ");
     process.exit();
     break;
+
+  // kom ihåg att göra en för bokstäver från input här som case 5 (isNaN(choice)) typ
 
   default:
     console.log("you need to pick a number in the 1 -> 4 range ");
