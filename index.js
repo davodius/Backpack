@@ -32,7 +32,6 @@ switch (choice) {
 
   case "2":
     while (true) {
-      // kom ihåg att fixa så man inte längre kommer fram om arrayn är tom.
       console.log("select the id of what you wish to remove: ");
       stuffInBag.forEach((element, index) => {
         console.log(`${index + 1}: ${element}`);
@@ -87,15 +86,15 @@ switch (choice) {
   default:
     if (isNaN(choice)) {
       console.log(
-        `It has to be a number\n${choice} is not one\nPress [enter] to try again`
+        `It has to be a number\n${choice} is not one\nPress [enter] to try again\n---------------- `
       );
     } else if (choice >= 5 || choice <= 0) {
       console.log(
-        "This menu only uses numbers less than 5 in the 1 -> 4 range, press [enter] to retry"
+        "This menu only uses numbers less than 5 in the 1 -> 4 range, press [enter] to retry\n---------------- "
       );
     } else {
       console.log(
-        "This menu only uses positive numbers in the 1 -> 4 range, press [enter] to retry"
+        "This menu only uses positive numbers in the 1 -> 4 range, press [enter] to retry\n---------------- "
       );
     }
 
