@@ -30,11 +30,13 @@ while (true) {
     console.log("that id does not exist ");
     //console.log(highestIndexValue);
   } else if (isNaN(removeItemFromBag)) {
-    console.log("it needs to be a number ");
+    console.log(
+      `${removeItemFromBag} is not a number\n----------------\nit needs to be a number\n---------------- `
+    );
   }
 
   console.log(
-    "press any key and/ or enter to proceed to the menu and [c] for closing the backpack "
+    "press enter to try a new index\n----------------\nenter [m] to go back to the menu\n----------------\nenter [c] for closing the backpack "
   );
 
   let menuReturnChoice = prompt();

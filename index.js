@@ -81,7 +81,7 @@ switch (choice) {
     break;
 
   default:
-    console.log("you need to pick 1-4 ");
+    console.log("you need to pick a number in the 1 -> 4 range ");
 
     break;
 }
