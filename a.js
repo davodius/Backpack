@@ -8,7 +8,7 @@ while (true) {
   console.log("what are you adding? ");
   let thingPutInBag = prompt();
 
-  if (thingPutInBag === isNaN) {
+  if (isNaN(thingPutInBag)) {
     //run prog
     stuffInBag.push(thingPutInBag);
     console.log(`added ${thingPutInBag} to the backpack.`);
@@ -30,7 +30,7 @@ while (true) {
       console.log("================ ");
       // put break here to close the adding function so the loop take back to menu -- rember
     }
-  } else if (isNaN(thingPutInBag) === false) {
+  } /* (isNaN(thingPutInBag) === false) */ else {
     console.log(
       "you cant put a number in a bag you silly goose\n---------------- "
     );
