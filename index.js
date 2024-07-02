@@ -17,6 +17,16 @@ const choice = prompt();
 
 switch (choice) {
   case "1":
+    /*
+  
+  
+  
+  Det under ska a.js bytas mot.
+  
+  
+  
+  */
+
     console.log("what are you adding? ");
     let thingPutInBag = prompt();
 
@@ -29,6 +39,17 @@ switch (choice) {
     //+ kunna lägga till hur många man vill (loopa, tror while true blir bra).
 
     break;
+
+  /*
+  
+  
+  
+  
+  
+  
+  
+  
+  */
 
   case "2":
     while (true) {

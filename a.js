@@ -30,7 +30,7 @@ while (true) {
       console.log("================ ");
       // put break here to close the adding function so the loop take back to menu -- rember
     }
-  } /* (isNaN(thingPutInBag) === false) */ else {
+  } else {
     console.log(
       "you cant put a number in a bag you silly goose\n---------------- "
     );
