@@ -98,15 +98,26 @@ switch (choice) {
 
     break;
 
-  case "3":
+  case "3": // kom ihåg att lägga till returnera till menyn eller stänga väskan efter att du har fått "titta " i väskan.
     console.log("the bag has: ");
     stuffInBag.sort();
     stuffInBag.forEach((element, index) => {
       console.log(`${index}: ${element}`);
       console.log("----------------");
     });
+    console.log(
+      "enter [m] to go back to the menu\n----------------\npress [enter] to go to close the bag "
+    );
 
-    break;
+    let choiceForCase3 = prompt();
+
+    if (choiceForCase3 === "") {
+      console.log("you've closed the backpack\n================  "),
+        process.exit();
+    } else if (choiceForCase3 === "m") {
+      console.log("================");
+      break;
+    }
 
   case "4":
     console.log("you've closed the backpack ");
