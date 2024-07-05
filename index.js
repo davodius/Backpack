@@ -17,39 +17,84 @@ const choice = prompt();
 
 switch (choice) {
   case "1":
-    /*
-  
-  
-  
-  Det under ska a.js bytas mot.
-  
-  
-  
-  */
+    while (true) {
+      stuffInBag.sort();
 
-    console.log("what are you adding? ");
-    let thingPutInBag = prompt();
+      console.log("what are you adding? ");
+      let thingPutInBag = prompt();
 
-    stuffInBag.push(thingPutInBag);
-    console.log(`added ${thingPutInBag} to the backpack.`);
-    console.log(`the bag now contains the following: ${stuffInBag}`);
-    console.log("----------------");
+      if (isNaN(thingPutInBag)) {
+        //run prog
+        stuffInBag.push(thingPutInBag);
+        console.log(`added ${thingPutInBag} to the backpack.`);
+        console.log(`the bag now contains the following: ${stuffInBag}`);
+        console.log("----------------");
 
-    // kom ihåg att fixa: bara bokstäver skall tas emot/ inga siffror
-    //+ kunna lägga till hur många man vill (loopa, tror while true blir bra).
+        console.log(
+          "press [enter] to add a new item\n----------------\nenter [m] to go back to the menu\n----------------\nenter [c] for closing the backpack "
+        );
 
-    break;
+        let afterAddedToArrayChoice = prompt();
 
-  /*
-  
-  
-  
-  
-  
-  
-  
-  
-  */
+        if (afterAddedToArrayChoice === "c") {
+          console.log("You've closed the backpack.\n================ "),
+            process.exit();
+        } else if (afterAddedToArrayChoice === "") {
+          console.log("================ ");
+        } else if (afterAddedToArrayChoice === "m") {
+          console.log("================ ");
+          break;
+          // put break here to close the adding function so the loop take back to menu -- rember
+        }
+      }
+
+      if (thingPutInBag === null || thingPutInBag === 0 || thingPutInBag < 0) {
+        console.log("you can't add something that doesn't exist  ");
+
+        console.log(
+          "press [enter] to try a new item\n----------------\nenter [m] to go back to the menu\n----------------\nenter [c] for closing the backpack "
+        );
+
+        let afterAddedToArrayChoice = prompt();
+
+        if (afterAddedToArrayChoice === "c") {
+          console.log("You've closed the backpack.\n================ "),
+            process.exit();
+          break;
+        } else if (afterAddedToArrayChoice === "") {
+          console.log("================ ");
+          break;
+        } else if (afterAddedToArrayChoice === "m") {
+          console.log("================g ");
+          break;
+          // put break here to close the adding function so the loop take back to menu -- rember
+        }
+      } else {
+        console.log(
+          "you cant put a number in a bag you silly goose\n---------------- "
+        );
+
+        console.log(
+          "press [enter] to add a new item\n----------------\nenter [m] to go back to the menu\n----------------\nenter [c] for closing the backpack "
+        );
+
+        let afterAddedToArrayChoice = prompt();
+
+        if (afterAddedToArrayChoice === "c") {
+          console.log("You've closed the backpack.\n================ "),
+            process.exit();
+          break;
+        } else if (afterAddedToArrayChoice === "") {
+          console.log("================ ");
+          break;
+        } else if (afterAddedToArrayChoice === "m") {
+          console.log("================ ");
+          break;
+          // put break here to close the adding function so the loop take back to menu -- rember
+        }
+        break;
+      } // here the silly goose gib menu retry item adding ends (above).
+    }
 
   case "2":
     while (true) {

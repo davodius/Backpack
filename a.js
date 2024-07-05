@@ -30,6 +30,31 @@ while (true) {
       console.log("================ ");
       // put break here to close the adding function so the loop take back to menu -- rember
     }
+  }
+
+  if (
+    thingPutInBag === null ||
+    thingPutInBag === "" ||
+    thingPutInBag === 0 ||
+    thingPutInBag < 0
+  ) {
+    console.log("you can't add something that doesn't exist  ");
+
+    console.log(
+      "press [enter] to try a new item\n----------------\nenter [m] to go back to the menu\n----------------\nenter [c] for closing the backpack "
+    );
+
+    let afterAddedToArrayChoice = prompt();
+
+    if (afterAddedToArrayChoice === "c") {
+      console.log("You've closed the backpack.\n================ "),
+        process.exit();
+    } else if (afterAddedToArrayChoice === "") {
+      console.log("================ ");
+    } else if (afterAddedToArrayChoice === "m") {
+      console.log("================ ");
+      // put break here to close the adding function so the loop take back to menu -- rember
+    }
   } else {
     console.log(
       "you cant put a number in a bag you silly goose\n---------------- "
